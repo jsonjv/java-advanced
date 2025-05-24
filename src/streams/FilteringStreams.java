@@ -6,9 +6,9 @@ import java.util.function.Predicate;
 public class FilteringStreams {
     public static void show() {
         List<Movie> movies = List.of(
-                new Movie("a", 10),
-                new Movie("b", 20),
-                new Movie("c", 30)
+                new Movie("a", 10, Genre.ACTION),
+                new Movie("b", 20, Genre.ACTION),
+                new Movie("c", 30, Genre.ACTION)
         );
 
         // intermediate operations - map, filter - returns a new Stream/pipe that can be chained

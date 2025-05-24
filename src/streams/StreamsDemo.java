@@ -8,9 +8,9 @@ import java.util.stream.Stream;
 public class StreamsDemo {
     public static void show() {
         List<Movie> movies = List.of(
-                new Movie("a", 10),
-                new Movie("b", 20),
-                new Movie("c", 30)
+                new Movie("a", 10, Genre.ACTION),
+                new Movie("b", 20, Genre.ACTION),
+                new Movie("c", 30, Genre.ACTION)
         );
 
         // imperative programming - how

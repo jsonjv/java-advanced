@@ -8,6 +8,11 @@ public class Main {
 //        FilteringStreams.show();
 //        SortingStreams.show();
 //        GettingUniqueElements.show();
-       PeekingElements.show();
+//        PeekingElements.show();
+//        SimpleReducers.show();
+//        CollectorsDemo.show();
+//        GroupingElements.show();
+//        PartitioningElements.show();
+        PrimitiveTypeStream.show();
     }
 }

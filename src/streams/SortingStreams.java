@@ -6,9 +6,9 @@ import java.util.List;
 public class SortingStreams {
     public static void show() {
         List<Movie> movies = List.of(
-                new Movie("b", 10),
-                new Movie("a", 20),
-                new Movie("c", 30)
+                new Movie("b", 10, Genre.ACTION),
+                new Movie("a", 20, Genre.ACTION),
+                new Movie("c", 30, Genre.ACTION)
         );
 
         // sorted - two overload methods
