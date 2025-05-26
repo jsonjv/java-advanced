@@ -17,7 +17,7 @@ public class ThreadsDemo {
 //            thread.start();
 //        }
 
-        Thread thread = new Thread(new DownloadFileTask());
-        thread.start();
+//        Thread thread = new Thread(new DownloadFileTask());
+//        thread.start();
     }
 }
