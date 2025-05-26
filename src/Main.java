@@ -1,18 +1,11 @@
-import streams.*;
+import concurrency.InterruptingThread;
+import concurrency.JoiningThread;
+import concurrency.ThreadsDemo;
 
 public class Main {
     public static void main(String[] args) {
-//        StreamsDemo.show();
-//        CreatingStreamsDemo.show();
-//        MappingStreams.show();
-//        FilteringStreams.show();
-//        SortingStreams.show();
-//        GettingUniqueElements.show();
-//        PeekingElements.show();
-//        SimpleReducers.show();
-//        CollectorsDemo.show();
-//        GroupingElements.show();
-//        PartitioningElements.show();
-        PrimitiveTypeStream.show();
+//        ThreadsDemo.show();
+//        JoiningThread.show();
+        InterruptingThread.show();
     }
 }
