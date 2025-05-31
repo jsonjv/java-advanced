@@ -1,5 +1,6 @@
 package concurrency;
 
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -7,13 +8,16 @@ public class DownloadStatus {
     // volatile - telling jvm this field is unstable it may change, don't rely on value stored in the cache, always read it from the memory
     // guaranteed the changes on the field is visible across threads
     private volatile boolean isDone;
-    private int totalBytes;
-    private final Lock lock = new ReentrantLock();
+//    private int totalBytes;
+    private AtomicInteger totalBytes = new AtomicInteger();
+//    private final Lock lock = new ReentrantLock();
 
     private final Object totalBytesLock = new Object();
 
     public int getTotalBytes() {
-        return totalBytes;
+//        return totalBytes;
+
+        return totalBytes.get();
     }
 
     public void incrementTotalBytes() {
@@ -40,9 +44,21 @@ public class DownloadStatus {
 //        }
 
         // use a dedicated monitor obj
-        synchronized (totalBytesLock) {
-            totalBytes++;
-        }
+//        synchronized (totalBytesLock) {
+//            totalBytes++;
+//        }
+
+        // multiple threads can modify this field concurrently without waiting for each other
+        // atomic types - uses technique compare and swap, which supported by most CPUs
+        // executed as a single uninterrupted operation
+
+        // dealing with counter variables, prefer atomic types to synchronization, faster and easier to use
+
+        // this atomic type will compare the current value with the expected value
+        // if their not equal, it's going to swap them
+        // e.g.
+        // current value = 0. increment it, so expected value = 1
+        totalBytes.incrementAndGet();
     }
 
     // same as synchronized (this) block

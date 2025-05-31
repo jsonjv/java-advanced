@@ -8,6 +8,7 @@ public class Main {
 //        RaceCondition.show();
 //        Confinement.show();
 //        VolatileKeyword.show();
-        ThreadSignaling.show();
+//        ThreadSignaling.show();
+        AtomicObjects.show();
     }
 }

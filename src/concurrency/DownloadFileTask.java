@@ -19,7 +19,7 @@ public class DownloadFileTask implements Runnable {
 //            throw new RuntimeException(e);
 //        }
 
-        for (int i = 0; i < 1_000_000; i++) {
+        for (int i = 0; i < 10_000; i++) {
             if (Thread.currentThread().isInterrupted()) return;
 //            System.out.println("Downloading byte " + i);
             status.incrementTotalBytes();
