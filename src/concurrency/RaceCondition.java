@@ -11,21 +11,21 @@ public class RaceCondition {
 
         List<Thread> threads = new ArrayList<>();
 
-//        for (int i = 0; i < 10; i++) {
-//            var thread = new Thread(new DownloadFileTask(status));
-//            thread.start();
-//            threads.add(thread);
-//        }
-//
-//        for (var thread : threads) {
-//            try {
-//                thread.join();
-//            } catch (InterruptedException e) {
-//                throw new RuntimeException(e);
-//            }
-//        }
-//
-//        System.out.println("total bytes " + status.getTotalBytes());
+        for (int i = 0; i < 10; i++) {
+            var thread = new Thread(new DownloadFileTask(status));
+            thread.start();
+            threads.add(thread);
+        }
+
+        for (var thread : threads) {
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        System.out.println("total bytes " + status.getTotalBytes());
 
         // strategies for thread safety
         // confinement - restrict each thread to have its own data

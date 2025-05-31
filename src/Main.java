@@ -5,7 +5,7 @@ public class Main {
 //        ThreadsDemo.show();
 //        JoiningThread.show();
 //        InterruptingThread.show();
-//        RaceCondition.show();
-        Confinement.show();
+        RaceCondition.show();
+//        Confinement.show();
     }
 }
