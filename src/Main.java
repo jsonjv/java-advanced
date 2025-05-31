@@ -9,6 +9,8 @@ public class Main {
 //        Confinement.show();
 //        VolatileKeyword.show();
 //        ThreadSignaling.show();
-        AtomicObjects.show();
+//        AtomicObjects.show();
+        SynchronizedCollections.show();
+        ConcurrentCollections.show();
     }
 }
