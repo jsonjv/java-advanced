@@ -1,6 +1,7 @@
 package concurrency;
 
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.LongAdder;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -9,7 +10,10 @@ public class DownloadStatus {
     // guaranteed the changes on the field is visible across threads
     private volatile boolean isDone;
 //    private int totalBytes;
-    private AtomicInteger totalBytes = new AtomicInteger();
+//    private AtomicInteger totalBytes = new AtomicInteger();
+//    https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/atomic/LongAdder.html
+    // if you have multiple threads updating a value frequently, prefer adder over atomic types
+    private LongAdder totalBytes = new LongAdder();
 //    private final Lock lock = new ReentrantLock();
 
     private final Object totalBytesLock = new Object();
@@ -17,7 +21,9 @@ public class DownloadStatus {
     public int getTotalBytes() {
 //        return totalBytes;
 
-        return totalBytes.get();
+//        return totalBytes.get();
+
+        return totalBytes.intValue(); // sum()
     }
 
     public void incrementTotalBytes() {
@@ -58,7 +64,9 @@ public class DownloadStatus {
         // if their not equal, it's going to swap them
         // e.g.
         // current value = 0. increment it, so expected value = 1
-        totalBytes.incrementAndGet();
+//        totalBytes.incrementAndGet();
+
+        totalBytes.increment();
     }
 
     // same as synchronized (this) block
