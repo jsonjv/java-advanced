@@ -1,11 +1,12 @@
 package concurrency;
 
-import streams.PartitioningElements;
-
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class DownloadStatus {
+    // volatile - telling jvm this field is unstable it may change, don't rely on value stored in the cache, always read it from the memory
+    // guaranteed the changes on the field is visible across threads
+    private volatile boolean isDone;
     private int totalBytes;
     private final Lock lock = new ReentrantLock();
 
@@ -46,4 +47,12 @@ public class DownloadStatus {
 
     // same as synchronized (this) block
 //    public synchronized void incrementTotalBytes() { }
+
+    public boolean isDone() {
+        return isDone;
+    }
+
+    public void done() {
+        isDone = true;
+    }
 }
