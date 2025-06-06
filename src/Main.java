@@ -6,6 +6,8 @@ public class Main {
 //        CallableFuture.show();
 //        CompletableFuturesDemo.show();
 //        AsynchronousAPI.show();
-        HandlingExceptions.show();
+//        HandlingExceptions.show();
+        TransformingCompletableFuture.show();
+        CombiningCompletableFutures.show();
     }
 }
