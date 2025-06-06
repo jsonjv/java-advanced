@@ -7,7 +7,10 @@ public class Main {
 //        CompletableFuturesDemo.show();
 //        AsynchronousAPI.show();
 //        HandlingExceptions.show();
-        TransformingCompletableFuture.show();
-        CombiningCompletableFutures.show();
+//        TransformingCompletableFuture.show();
+//        CombiningCompletableFutures.show();
+//        WaitForManyTasks.show();
+//        WaitForFirstTask.show();
+        HandlingTimeouts.show();
     }
 }
