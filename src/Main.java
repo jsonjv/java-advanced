@@ -11,6 +11,7 @@ public class Main {
 //        CombiningCompletableFutures.show();
 //        WaitForManyTasks.show();
 //        WaitForFirstTask.show();
-        HandlingTimeouts.show();
+//        HandlingTimeouts.show();
+        BestPriceFinder.show();
     }
 }
